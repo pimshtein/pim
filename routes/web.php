@@ -11,6 +11,28 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/callback', function (Request $request) {
+    $http = new GuzzleHttp\Client;
+
+    $response = $http->post('http://pim/oauth/token', [
+        'form_params' => [
+            'grant_type' => 'authorization_code',
+            'client_id' => '3',
+            'client_secret' => 'xPjRgSzhoVCzoyVG8r8tZKNaIIXCjSU1MGh3I2pz',
+            'redirect_uri' => 'http://example.com/callback',
+            'code' => 'test',
+        ],
+    ]);
+
+    return json_decode((string) $response->getBody(), true);
 });

@@ -91,5 +91,9 @@
                 </div>
             </div>
         </div>
+        <div id="app">
+            <passport-personal-access-tokens></passport-personal-access-tokens>
+        </div>
+        <script src="/js/app.js"></script>
     </body>
 </html>
