@@ -39,6 +39,12 @@ return [
         'client_id'     => env('TWITTER_ID'),
         'client_secret' => env('TWITTER_SECRET'),
         'redirect'      => env('TWITTER_URL'),
-    ]
+    ],
+
+    'vkontakte' => [
+        'client_id'     => env('VKONTAKTE_ID'),
+        'client_secret' => env('VKONTAKTE_SECRET'),
+        'redirect'      => env('VKONTAKTE_URL'),
+    ],
 
 ];
